@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD-OOP.Data", "CRUD-OOP.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD-OOP.Api", "CRUD-OOP.Api\CRUD-OOP.Api.csproj", "{6967EACD-B14D-48E9-A452-27731A7C5F76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD-OOP.Tests", "CRUD-OOP.Tests\CRUD-OOP.Tests.csproj", "{A25056E3-75AE-4F75-8681-94F8EE740B93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6967EACD-B14D-48E9-A452-27731A7C5F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6967EACD-B14D-48E9-A452-27731A7C5F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6967EACD-B14D-48E9-A452-27731A7C5F76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A25056E3-75AE-4F75-8681-94F8EE740B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A25056E3-75AE-4F75-8681-94F8EE740B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A25056E3-75AE-4F75-8681-94F8EE740B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A25056E3-75AE-4F75-8681-94F8EE740B93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
