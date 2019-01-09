@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CRUD_OOP.Core.ValueObjects
+namespace CRUD_OOP.Core.ValueObjects.Name
 {
-    public class BookName : ValueObject<BookName>
+    public class BookName : ValueObject<BookName>, IName
     {
         public BookName(string name)
         {
@@ -12,7 +12,13 @@ namespace CRUD_OOP.Core.ValueObjects
 
             this.Name = name;
         }
+
         public string Name { get; private set; }
+
+        public string GetFullName()
+        {
+            return Name;
+        }
     }
 
 }

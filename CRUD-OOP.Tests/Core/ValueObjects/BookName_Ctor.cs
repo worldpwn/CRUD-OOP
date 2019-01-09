@@ -1,4 +1,5 @@
 ﻿using CRUD_OOP.Core.ValueObjects;
+using CRUD_OOP.Core.ValueObjects.Name;
 using System;
 using System.Collections.Generic;
 using System.Text;
