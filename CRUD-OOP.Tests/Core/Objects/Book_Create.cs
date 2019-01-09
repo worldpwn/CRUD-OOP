@@ -11,16 +11,20 @@ namespace CRUD_OOP.Tests.Core.Objects
     public class Book_Create
     {
         [Theory]
-        [InlineData(2, "War and Peace", "L.Tolstoy", 1000)]
-        [InlineData(2, "Some Name", "Vvv Pupkin", 1000)]
-        [InlineData(2, "Rose", "Flober", 1000)]
+        [InlineData(2, "War and Peace", "L", "Tolstoy", 1000)]
+        [InlineData(2, "Some Name", "Viktor", "Churbin", 1000)]
+        [InlineData(2, "Rose", "Wow","Authro", 1000)]
         public void SetCorrectDataWithIdInDB_Should_CreateObjectWitCorrectData(
             int? idInDb, 
             string bookName, 
-            string author, 
+            string authorFirstName,
+            string authorLastName,
             int pages)
         {
             DateTimeOffset publishedDate = DateTimeOffset.UtcNow;
+
+            Author author = Author.Create(null, new AuthorName(firstName: new OneWordName(authorFirstName), middleName: null, lastName: new OneWordName(authorLastName)));
+
             Book book = Book.Create(
                 idInDb: idInDb,
                 bookName: new BookName(bookName),
@@ -28,11 +32,11 @@ namespace CRUD_OOP.Tests.Core.Objects
                 publishedDate: publishedDate,
                 pages: new BookPagesValue(numberOfPages: pages));
 
-            Assert.Equal(book.IdInDb, idInDb);
-            Assert.Equal(book.BookName, new BookName(bookName));
-            Assert.Equal(book.Author, author);
-            Assert.Equal(book.PublishedDate, publishedDate);
-            Assert.Equal(book.Pages, new BookPagesValue(numberOfPages: pages));
+            Assert.Equal(idInDb, book.IdInDb);
+            Assert.Equal(new BookName(bookName), book.BookName);
+            Assert.Equal(author, book.Author);
+            Assert.Equal(publishedDate, book.PublishedDate);
+            Assert.Equal(new BookPagesValue(numberOfPages: pages), book.Pages);
         }
 
     }
