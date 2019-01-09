@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CRUD_OOP.MVC.ViewModels
+namespace CRUD_OOP.SharedKernel.ViewModels
 {
     public class AuthorViewModel
     {

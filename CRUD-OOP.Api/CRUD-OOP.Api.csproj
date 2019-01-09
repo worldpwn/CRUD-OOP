@@ -9,6 +9,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CRUD-OOP.Core\CRUD-OOP.Core.csproj" />
+    <ProjectReference Include="..\CRUD-OOP.Data\CRUD-OOP.Data.csproj" />
   </ItemGroup>
 
 </Project>
