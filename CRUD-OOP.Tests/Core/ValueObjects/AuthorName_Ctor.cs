@@ -1,4 +1,5 @@
 ﻿using CRUD_OOP.Core.ValueObjects.Name;
+using CRUD_OOP.SharedKernel.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -58,7 +59,7 @@ namespace CRUD_OOP.Tests.Core.ValueObjects
                 middleName: new OneWordName("Asd"),
                 lastName: new OneWordName("Tsd"));
 
-            Assert.Throws<ArgumentException>((Action)action);
+            Assert.Throws<ModelValidationException>((Action)action);
         }
 
         [Fact]
@@ -69,7 +70,7 @@ namespace CRUD_OOP.Tests.Core.ValueObjects
                 middleName: new OneWordName(string.Empty),
                 lastName: new OneWordName("Tsd"));
 
-            Assert.Throws<ArgumentException>((Action)action);
+            Assert.Throws<ModelValidationException>((Action)action);
         }
 
         [Fact]
@@ -80,7 +81,7 @@ namespace CRUD_OOP.Tests.Core.ValueObjects
                 middleName: null,
                 lastName: new OneWordName(string.Empty));
 
-            Assert.Throws<ArgumentException>((Action)action);
+            Assert.Throws<ModelValidationException>((Action)action);
         }
 
         [Fact]

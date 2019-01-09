@@ -10,6 +10,11 @@ namespace CRUD_OOP.Data.Repository
     {
         private List<T> _data = new List<T>();
 
+
+        public List<T> GetAll()
+        {
+            return _data;
+        }
         public void Add(T entity)
         {
             _data.Add(entity);

@@ -1,4 +1,5 @@
 ﻿using CRUD_OOP.Core.ValueObjects.Name;
+using CRUD_OOP.SharedKernel.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,14 +24,14 @@ namespace CRUD_OOP.Tests.Core.ValueObjects
        public void EmptyName_Should_ThrowException()
        {
             void action() => new OneWordName(string.Empty);
-            Assert.Throws<ArgumentException>((Action)action);
+            Assert.Throws<ModelValidationException>((Action)action);
        }
 
         [Fact]
         public void NullName_Should_ThrowException()
         {
             void action() => new OneWordName(null);
-            Assert.Throws<ArgumentException>((Action)action);
+            Assert.Throws<ModelValidationException>((Action)action);
         }
 
         [Theory]
@@ -46,7 +47,7 @@ namespace CRUD_OOP.Tests.Core.ValueObjects
         public void NameConsistNonLetters_Should_ThrowException(string name)
         {
             void action() => new OneWordName(name);
-            Assert.Throws<ArgumentException>((Action)action);
+            Assert.Throws<ModelValidationException>((Action)action);
         }
 
     }
