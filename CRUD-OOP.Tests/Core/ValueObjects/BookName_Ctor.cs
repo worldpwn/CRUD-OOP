@@ -1,10 +1,11 @@
 ﻿using CRUD_OOP.Core.ValueObjects;
+using CRUD_OOP.Core.ValueObjects.Name;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace CRUD_OOP.Tests.ValueObjects
+namespace CRUD_OOP.Tests.Core.ValueObjects
 {
     public class BookName_Ctor
     {
