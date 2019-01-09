@@ -1,5 +1,6 @@
 ﻿using CRUD_OOP.Core.ValueObjects;
 using CRUD_OOP.Core.ValueObjects.Name;
+using CRUD_OOP.SharedKernel;
 using System;
 using System.Collections.Generic;
 using System.Text;

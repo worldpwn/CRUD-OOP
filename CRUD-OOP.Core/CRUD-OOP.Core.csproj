@@ -3,6 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>CRUD_OOP.Core</RootNamespace>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CRUD-OOP.Data\CRUD-OOP.Data.csproj" />
+    <ProjectReference Include="..\CRUD-OOP.SharedKernel\CRUD-OOP.SharedKernel.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -5,6 +5,8 @@
     <RootNamespace>CRUD_OOP.Tests</RootNamespace>
 
     <IsPackable>false</IsPackable>
+
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

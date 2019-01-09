@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CRUD_OOP.Core
+namespace CRUD_OOP.SharedKernel
 {
     public abstract class Entity<TId> : IEquatable<Entity<TId>>
     {

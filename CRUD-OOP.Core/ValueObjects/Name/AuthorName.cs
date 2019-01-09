@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRUD_OOP.SharedKernel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

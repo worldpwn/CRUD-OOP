@@ -5,4 +5,8 @@
     <RootNamespace>CRUD_OOP.Data</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CRUD-OOP.SharedKernel\CRUD-OOP.SharedKernel.csproj" />
+  </ItemGroup>
+
 </Project>
