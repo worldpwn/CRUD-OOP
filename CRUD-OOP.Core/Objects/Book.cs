@@ -12,19 +12,17 @@ namespace CRUD_OOP.Core.Objects
         public string Author { get; private set; }
         public DateTimeOffset PublishedDate { get; private set; }
         public BookPagesValue Pages { get; private set; }
-        public string ISBN { get; private set; }
 
-        private Book(Guid id, int? idInDb, BookName bookName, string author, DateTimeOffset publishedDate, BookPagesValue pages, string ISBN) : base(id: id)
+        private Book(Guid id, int? idInDb, BookName bookName, string author, DateTimeOffset publishedDate, BookPagesValue pages) : base(id: id)
         {
             this.IdInDb = idInDb;
             this.BookName = bookName;
             this.Author = author;
             this.PublishedDate = publishedDate;
             this.Pages = pages;
-            this.ISBN = ISBN;
         }
 
-        public static Book Create(int? idInDb, BookName bookName, string author, DateTimeOffset publishedDate, BookPagesValue pages, string ISBN)
+        public static Book Create(int? idInDb, BookName bookName, string author, DateTimeOffset publishedDate, BookPagesValue pages)
         {
             return new Book(
                 id: Guid.NewGuid(),
@@ -32,8 +30,7 @@ namespace CRUD_OOP.Core.Objects
                 bookName: bookName,
                 author: author,
                 publishedDate: publishedDate,
-                pages: pages,
-                ISBN: ISBN);
+                pages: pages);
         }
     }
 }
