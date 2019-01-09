@@ -23,14 +23,14 @@ namespace CRUD_OOP.Tests.Core
             DateTimeOffset publishedDate = DateTimeOffset.UtcNow;
             Book book = Book.Create(
                 idInDb: idInDb,
-                bookName: bookName,
+                bookName: new BookName(bookName),
                 author: author,
                 publishedDate: publishedDate,
                 pages: new BookPagesValue(numberOfPages: pages),
                 ISBN: ISBN);
 
             Assert.Equal(book.IdInDb, idInDb);
-            Assert.Equal(book.BookName, bookName);
+            Assert.Equal(book.BookName, new BookName(bookName));
             Assert.Equal(book.Author, author);
             Assert.Equal(book.PublishedDate, publishedDate);
             Assert.Equal(book.Pages, new BookPagesValue(numberOfPages: pages));

@@ -8,13 +8,13 @@ namespace CRUD_OOP.Core.Objects
     public class Book : Entity<Guid>
     {
         public int? IdInDb { get; private set; }
-        public string BookName { get; private set; }
+        public BookName BookName { get; private set; }
         public string Author { get; private set; }
         public DateTimeOffset PublishedDate { get; private set; }
         public BookPagesValue Pages { get; private set; }
         public string ISBN { get; private set; }
 
-        private Book(Guid id, int? idInDb, string bookName, string author, DateTimeOffset publishedDate, BookPagesValue pages, string ISBN) : base(id: id)
+        private Book(Guid id, int? idInDb, BookName bookName, string author, DateTimeOffset publishedDate, BookPagesValue pages, string ISBN) : base(id: id)
         {
             this.IdInDb = idInDb;
             this.BookName = bookName;
@@ -24,7 +24,7 @@ namespace CRUD_OOP.Core.Objects
             this.ISBN = ISBN;
         }
 
-        public static Book Create(int? idInDb, string bookName, string author, DateTimeOffset publishedDate, BookPagesValue pages, string ISBN)
+        public static Book Create(int? idInDb, BookName bookName, string author, DateTimeOffset publishedDate, BookPagesValue pages, string ISBN)
         {
             return new Book(
                 id: Guid.NewGuid(),
