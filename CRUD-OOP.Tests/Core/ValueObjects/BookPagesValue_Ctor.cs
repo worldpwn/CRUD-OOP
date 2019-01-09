@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace CRUD_OOP.Tests.ValueObjects
+namespace CRUD_OOP.Tests.Core.ValueObjects
 {
     public class BookPagesValue_Ctor
     {
