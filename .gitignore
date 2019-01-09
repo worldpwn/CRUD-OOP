@@ -1,0 +1,9 @@
+.vs/
+CRUD-OOP.Api/bin/
+CRUD-OOP.Api/obj/
+CRUD-OOP.Core/bin/
+CRUD-OOP.Core/obj/
+CRUD-OOP.Data/obj/
+CRUD-OOP.Data/bin/
+CRUD-OOP.MVC/bin/
+CRUD-OOP.MVC/obj/
