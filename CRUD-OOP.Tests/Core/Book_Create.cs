@@ -1,4 +1,5 @@
 ﻿using CRUD_OOP.Core.Objects;
+using CRUD_OOP.Core.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,14 +26,14 @@ namespace CRUD_OOP.Tests.Core
                 bookName: bookName,
                 author: author,
                 publishedDate: publishedDate,
-                pages: pages,
+                pages: new BookPagesValue(numberOfPages: pages),
                 ISBN: ISBN);
 
             Assert.Equal(book.IdInDb, idInDb);
             Assert.Equal(book.BookName, bookName);
             Assert.Equal(book.Author, author);
             Assert.Equal(book.PublishedDate, publishedDate);
-            Assert.Equal(book.Pages, pages);
+            Assert.Equal(book.Pages, new BookPagesValue(numberOfPages: pages));
             Assert.Equal(book.ISBN, ISBN);
         }
 
