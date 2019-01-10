@@ -1,5 +1,4 @@
-﻿using CRUD_OOP.SharedKernel.Exceptions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,18 +6,10 @@ namespace CRUD_OOP.Core.ValueObjects.Name
 {
     public class OneWordName
     {
-        public OneWordName(string name, string keyForModelState = null)
+        public OneWordName(string name)
         {
-            try
-            {
-                GuardValidateName(name);
-            }
-            catch(Exception e) when (e is ArgumentException)
-            {
-                throw new ModelValidationException(keyForModelState, e.Message);
-            }
+            GuardValidateName(name);
 
-       
             this.Value = name;
         }
 
@@ -28,7 +19,7 @@ namespace CRUD_OOP.Core.ValueObjects.Name
         {
             if (String.IsNullOrEmpty(name)) throw new ArgumentException("Name cannot be null or empty.");
             if (!Check_OnlyLetters(name)) throw new ArgumentException("Only letters allowed in names.");
-            if (!Check_OnlyFirstIsUpper(name)) throw new ArgumentException("Shoud start from Capital letter and others are small.");
+            if (!Check_OnlyFirstIsUpper(name)) throw new ArgumentException("Should start from Capital letter.");
 
         }
 

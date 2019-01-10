@@ -3,8 +3,6 @@ using CRUD_OOP.Core.Objects;
 using CRUD_OOP.Core.ValueObjects.Name;
 using CRUD_OOP.Data.Models;
 using CRUD_OOP.Data.Repository;
-using CRUD_OOP.MVC.ViewModels;
-using CRUD_OOP.SharedKernel.Exceptions;
 using CRUD_OOP.SharedKernel.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -46,11 +44,11 @@ namespace CRUD_OOP.MVC.Controllers
         {
             try
             {
-                OneWordName firstName = new OneWordName(viewModel.FirstName, keyForModelState: nameof(viewModel.FirstName));
+                OneWordName firstName = new OneWordName(viewModel.FirstName);
 
-                OneWordName middleName = string.IsNullOrEmpty(viewModel.MiddleName) ? null : new OneWordName(viewModel.MiddleName, keyForModelState: nameof(viewModel.MiddleName));
+                OneWordName middleName = string.IsNullOrEmpty(viewModel.MiddleName) ? null : new OneWordName(viewModel.MiddleName);
 
-                OneWordName lastName = new OneWordName(viewModel.LastName, keyForModelState: nameof(viewModel.LastName));
+                OneWordName lastName = new OneWordName(viewModel.LastName);
 
                 var name = new AuthorName(
                     firstName: firstName,
@@ -63,9 +61,9 @@ namespace CRUD_OOP.MVC.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-            catch (Exception e) when (e is ModelValidationException asModelValidation)
+            catch (Exception e)
             {               
-                ModelState.AddModelError(asModelValidation.Key, e.Message);
+                ModelState.AddModelError(string.Empty, e.Message);
                 return View();
             }
         }
