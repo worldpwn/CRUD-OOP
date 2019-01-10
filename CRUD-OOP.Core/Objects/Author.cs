@@ -32,9 +32,9 @@ namespace CRUD_OOP.Core.Objects
             var model = repository.Get(id);
 
             AuthorName authorName = new AuthorName(
-                firstName: new OneWordName(model.FirstName),
-                middleName: model.MiddleName == null ? null : new OneWordName(model.MiddleName),
-                lastName: new OneWordName(model.LastName));
+                firstName: model.FirstName,
+                middleName: model.MiddleName,
+                lastName: model.LastName);
 
             return Create(
                 idInDB: id,
@@ -57,9 +57,9 @@ namespace CRUD_OOP.Core.Objects
         {
             var fromDBModel = repository.Get(this.IdInDB ?? default);
 
-            fromDBModel.FirstName = this.Name.FirstName.Value;
-            fromDBModel.LastName = this.Name.LastName.Value;
-            fromDBModel.MiddleName = this.Name.MiddleName.Value;
+            fromDBModel.FirstName = this.Name.FirstName;
+            fromDBModel.LastName = this.Name.LastName;
+            fromDBModel.MiddleName = this.Name.MiddleName;
         }
 
         private void CreateInDB(Repository<AuthorModel> repository)
@@ -68,9 +68,9 @@ namespace CRUD_OOP.Core.Objects
             AuthorModel authorModel = new AuthorModel()
             {
                 Id = this.IdInDB ?? default,
-                FirstName = this.Name.FirstName.Value,
-                LastName = this.Name.LastName.Value,
-                MiddleName = this.Name.MiddleName.Value,
+                FirstName = this.Name.FirstName,
+                LastName = this.Name.LastName,
+                MiddleName = this.Name.MiddleName,
             };
 
             repository.Add(authorModel);

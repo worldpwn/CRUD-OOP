@@ -34,9 +34,9 @@ namespace CRUD_OOP.Tests.Core.Objects
             Author author = Author.GetFromDb(id, _repository);
 
             Assert.Equal(model.Id, author.IdInDB);
-            Assert.Equal(model.FirstName, author.Name.FirstName.Value);
-            Assert.Equal(model.MiddleName, author.Name.MiddleName.Value);
-            Assert.Equal(model.LastName, author.Name.LastName.Value);
+            Assert.Equal(model.FirstName, author.Name.FirstName);
+            Assert.Equal(model.MiddleName, author.Name.MiddleName);
+            Assert.Equal(model.LastName, author.Name.LastName);
         }
     }
 }

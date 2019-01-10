@@ -1,5 +1,4 @@
 ﻿using CRUD_OOP.Core.ValueObjects.Name;
-using CRUD_OOP.SharedKernel.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,13 +14,13 @@ namespace CRUD_OOP.Tests.Core.ValueObjects
         public void SetCorrectName_Should_BeSet(string firstName, string middleName, string lastName)
         {
             AuthorName authorName = new AuthorName(
-                firstName: new OneWordName(firstName),
-                middleName: new OneWordName(middleName),
-                lastName: new OneWordName(lastName));
+                firstName: firstName,
+                middleName: middleName,
+                lastName: lastName);
 
-            Assert.Equal(firstName, authorName.FirstName.Value);
-            Assert.Equal(middleName, authorName.MiddleName.Value);
-            Assert.Equal(lastName, authorName.LastName.Value);
+            Assert.Equal(firstName, authorName.FirstName);
+            Assert.Equal(middleName, authorName.MiddleName);
+            Assert.Equal(lastName, authorName.LastName);
         }
 
         [Fact]
@@ -31,13 +30,13 @@ namespace CRUD_OOP.Tests.Core.ValueObjects
             string lastName = "Lastname";
 
             AuthorName authorName = new AuthorName(
-                firstName: new OneWordName(firstName),
+                firstName: firstName,
                 middleName: null,
-                lastName: new OneWordName(lastName));
+                lastName: lastName);
 
-            Assert.Equal(firstName, authorName.FirstName.Value);
+            Assert.Equal(firstName, authorName.FirstName);
             Assert.Null(authorName.MiddleName);
-            Assert.Equal(lastName, authorName.LastName.Value);
+            Assert.Equal(lastName, authorName.LastName);
         }
 
         [Fact]
@@ -45,8 +44,8 @@ namespace CRUD_OOP.Tests.Core.ValueObjects
        {
             void action ()=> new AuthorName(
                 firstName: null,
-                middleName: new OneWordName("Asd"),
-                lastName: new OneWordName("Tsd"));
+                middleName: "Asd",
+                lastName: "Tsd");
 
             Assert.Throws<ArgumentException>((Action)action);
         }
@@ -55,40 +54,40 @@ namespace CRUD_OOP.Tests.Core.ValueObjects
         public void FirstNameIsEmpty_Should_throwArgumentExceptopn()
         {
             void action() => new AuthorName(
-                firstName: new OneWordName(string.Empty),
-                middleName: new OneWordName("Asd"),
-                lastName: new OneWordName("Tsd"));
+                firstName: string.Empty,
+                middleName: "Asd",
+                lastName: "Tsd");
 
-            Assert.Throws<ModelValidationException>((Action)action);
+            Assert.Throws<ArgumentException>((Action)action);
         }
 
         [Fact]
         public void MiddleNameIsEmpty_Should_throwArgumentExceptopn()
         {
             void action() => new AuthorName(
-                firstName: new OneWordName("A"),
-                middleName: new OneWordName(string.Empty),
-                lastName: new OneWordName("Tsd"));
+                firstName: "A",
+                middleName: string.Empty,
+                lastName: "Tsd");
 
-            Assert.Throws<ModelValidationException>((Action)action);
+            Assert.Throws<ArgumentException>((Action)action);
         }
 
         [Fact]
         public void LastNameIsEmpty_Should_throwArgumentExceptopn()
         {
             void action() => new AuthorName(
-                firstName: new OneWordName("A"),
+                firstName: "A",
                 middleName: null,
-                lastName: new OneWordName(string.Empty));
+                lastName: string.Empty);
 
-            Assert.Throws<ModelValidationException>((Action)action);
+            Assert.Throws<ArgumentException>((Action)action);
         }
 
         [Fact]
         public void LastNameIsNull_Should_throwArgumentExceptopn()
         {
             void action() => new AuthorName(
-                firstName: new OneWordName("A"),
+                firstName: "A",
                 middleName: null,
                 lastName: null);
 

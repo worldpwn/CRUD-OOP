@@ -23,7 +23,7 @@ namespace CRUD_OOP.Tests.Core.Objects
         {
             DateTimeOffset publishedDate = DateTimeOffset.UtcNow;
 
-            Author author = Author.Create(null, new AuthorName(firstName: new OneWordName(authorFirstName), middleName: null, lastName: new OneWordName(authorLastName)));
+            Author author = Author.Create(null, new AuthorName(firstName: authorFirstName, middleName: null, lastName: authorLastName));
 
             Book book = Book.Create(
                 idInDb: idInDb,

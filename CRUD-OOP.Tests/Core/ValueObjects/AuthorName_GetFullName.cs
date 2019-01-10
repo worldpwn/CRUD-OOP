@@ -14,9 +14,9 @@ namespace CRUD_OOP.Tests.Core.ValueObjects
             string fullName = "Gustave Flaubert";
 
             IName authorName = new AuthorName(
-                firstName: new OneWordName("Gustave"),
+                firstName: "Gustave",
                 middleName: null,
-                lastName: new OneWordName("Flaubert"));
+                lastName: "Flaubert");
 
             Assert.Equal(fullName, authorName.GetFullName());
         }
@@ -27,9 +27,9 @@ namespace CRUD_OOP.Tests.Core.ValueObjects
             string fullName = "Francis Scott Fitzgerald";
 
             IName authorName = new AuthorName(
-                firstName: new OneWordName("Francis"),
-                middleName: new OneWordName("Scott"),
-                lastName: new OneWordName("Fitzgerald"));
+                firstName: "Francis",
+                middleName: "Scott",
+                lastName: "Fitzgerald");
 
             Assert.Equal(fullName, authorName.GetFullName());
         }

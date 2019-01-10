@@ -34,9 +34,9 @@ namespace CRUD_OOP.Tests.Core.Objects
 
 
             AuthorName newName = new AuthorName(
-                firstName: new OneWordName("Ak"),
-                middleName: new OneWordName("Middlename"), 
-                lastName: new OneWordName("Last"));
+                firstName: "Ak",
+                middleName: "Middlename", 
+                lastName: "Last");
 
             Author author = Author.Create(idInDB: id, name: newName);
 
@@ -49,9 +49,9 @@ namespace CRUD_OOP.Tests.Core.Objects
 
             var mdodelFromDb = _repository.Get(id);
 
-            Assert.Equal(newName.FirstName.Value, mdodelFromDb.FirstName);
-            Assert.Equal(newName.MiddleName.Value, mdodelFromDb.MiddleName);
-            Assert.Equal(newName.LastName.Value, mdodelFromDb.LastName);
+            Assert.Equal(newName.FirstName, mdodelFromDb.FirstName);
+            Assert.Equal(newName.MiddleName, mdodelFromDb.MiddleName);
+            Assert.Equal(newName.LastName, mdodelFromDb.LastName);
         }
 
         [Fact]
@@ -59,9 +59,9 @@ namespace CRUD_OOP.Tests.Core.Objects
         {
 
             AuthorName name = new AuthorName(
-                firstName: new OneWordName("Ak"),
-                middleName: new OneWordName("Middlename"),
-                lastName: new OneWordName("Last"));
+                firstName: "Ak",
+                middleName: "Middlename",
+                lastName: "Last");
 
             Author author = Author.Create(idInDB: null, name: name);
 
@@ -70,9 +70,9 @@ namespace CRUD_OOP.Tests.Core.Objects
 
             var mdodelFromDb = _repository.Get(author.IdInDB ?? default);
 
-            Assert.Equal(name.FirstName.Value, mdodelFromDb.FirstName);
-            Assert.Equal(name.MiddleName.Value, mdodelFromDb.MiddleName);
-            Assert.Equal(name.LastName.Value, mdodelFromDb.LastName);
+            Assert.Equal(name.FirstName, mdodelFromDb.FirstName);
+            Assert.Equal(name.MiddleName, mdodelFromDb.MiddleName);
+            Assert.Equal(name.LastName, mdodelFromDb.LastName);
         }
 
     }

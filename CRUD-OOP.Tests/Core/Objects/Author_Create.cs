@@ -14,9 +14,9 @@ namespace CRUD_OOP.Tests.Core.Objects
         {
             int idIndDb = 389;
             AuthorName name = new AuthorName(
-                firstName: new OneWordName("Ak"),
-                middleName: new OneWordName("Middlename"), 
-                lastName: new OneWordName("Last"));
+                firstName: "Ak",
+                middleName: "Middlename", 
+                lastName: "Last");
 
             Author author = Author.Create(idInDB: idIndDb, name: name);
             Assert.Equal(idIndDb, author.IdInDB);

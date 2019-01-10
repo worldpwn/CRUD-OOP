@@ -44,11 +44,11 @@ namespace CRUD_OOP.MVC.Controllers
         {
             try
             {
-                OneWordName firstName = new OneWordName(viewModel.FirstName);
+                string firstName = viewModel.FirstName;
 
-                OneWordName middleName = string.IsNullOrEmpty(viewModel.MiddleName) ? null : new OneWordName(viewModel.MiddleName);
+                string middleName = viewModel.MiddleName;
 
-                OneWordName lastName = new OneWordName(viewModel.LastName);
+                string lastName = viewModel.LastName;
 
                 var name = new AuthorName(
                     firstName: firstName,
